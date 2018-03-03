@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Simple Dev 1500 Vol. 1: "The Searching"</title>
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<audio id="menuSound" src="https://www.soundjay.com/button/sounds/button-20.mp3" autostart="false"></audio>
+	<audio id="findSound" src="https://www.soundjay.com/button/sounds/button-16.mp3" autostart="false"></audio>
+	<audio id="perfectChainSound" src="https://www.soundjay.com/button/sounds/button-37.mp3" autostart="false"></audio>
+	<audio id="fastChainSound" src="https://www.soundjay.com/button/sounds/button-32.mp3" autostart="false"></audio>
+	<audio id="easyChainSound" src="https://www.soundjay.com/button/sounds/button-31.mp3" autostart="false"></audio>
+	<audio id="faultSound" src="https://www.soundjay.com/button/sounds/button-10.mp3" autostart="false"></audio>
+	<audio id="retrySound" src="https://www.soundjay.com/button/sounds/button-27.mp3" autostart="false"></audio>
+	<audio id="themeSong" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/498786/midnight-ride-01a.mp3" autoStart="false" loop="true"></audio>
+</head>
+<body>
+<div class="wrapper">
+	<div class="timer">3:00</div>
+	<div class="score">0</div>
+	<div class="combo"></div>
+	<div class="life-meter">
+		<span class="heart-piece">&#10084;</span>
+		<span class="heart-piece">&#10084;</span>
+		<span class="heart-piece">&#10084;</span>
+	</div>
+	<div class="title-screen">
+		<span class="start-text">Left-Click to Start</span>
+	</div>
+	<div class="difficulty-wrap">
+  		<span class="mute">♫ Sound: On</span>
+  		<h2>Select a Difficulty Setting</h2>
+		<ul>
+			<li class="easy-difficulty">Easy</li>
+			<li class="medium-difficulty">Medium</li>
+			<li class="hard-difficulty">Hard</li>
+		</ul>
+	</div>
+	<div class="bg standby">
+		<div class="object-wrap">
+		</div>
+		<div class="item-list-wrap">
+  			<div class="item-list">
+				<ul class="item-col">
+				</ul>
+      		</div>
+    	</div>
+	</div>
+	<div class="game-over-wrap">
+		<div class="content">
+			<h2 class="game-over-message">Game Over</h2>
+			<div class="score-stats-wrap">
+      			<table>
+        		<tbody>
+					<tr>
+						<td>Perfect Chains</td>
+						<td class="score-val perfect-chains">xxxx</td>
+					</tr>
+					<tr>
+						<td>Fast Chains</td>
+						<td class="score-val fast-chains">xxxx</td>
+					</tr>
+					<tr>
+						<td>Easy Chains</td>
+						<td class="score-val easy-chains">xxxx</td>
+					</tr>
+					<tr>
+						<td>Total Chains</td>
+						<td class="score-val total-chains">xxxx</td>
+					</tr>
+					<tr>
+						<td>Longest Chain</td>
+						<td class="score-val longest-chain">xxxx</td>
+					</tr>
+					<tr>
+						<td>Faults</td>
+						<td class="score-val total-faults">xxxx</td>
+					</tr>
+					<tr>
+						<td>Time Bonus</td>
+						<td class="score-val time-bonus">xxxx</td>
+					</tr>
+					<!--
+					<tr>
+						<td>Objects Found</td>
+						<td class="objects-found">xxxx</td>
+					</tr>
+					-->
+					<tr>
+						<td>Total Score</td>
+						<td class="score-val total-score">xxxx</td>
+					</tr>
+				</tbody>
+			</table>
+			</div>
+		</div>
+		<button class="retry">Try Again</button>
+	</div>
+</div>
+
+<!-- Combo Cursor Pop Message -->
+<template id="chain-pop-item">
+	<div class="pop-item">
+		<div class="col">
+			<span class="chain-type">Perfect</span>
+			<span>Combo</span>
+		</div>
+		<div class="col">
+			<span class="chain-val">20</span>
+		</div>
+	</div>
+</template>
+<script type="text/javascript" src="js/scripts.js" charset="utf-8"></script>
+</body>
+</html>

@@ -1,0 +1,944 @@
+/*------------------------------------*\
+> $: Table of contents
+----------------------------------------
+$: Base Styles
+$: General/Misc. Styles
+$: Difficulty Select Menu Styles
+$: Title Screen Styles
+$: Life Meter Styles
+$: GameTimer Styles
+$: Scoring Element Styles
+$: Chain Combo Element Styles
+$: Pop Item Styles
+$: Game Over Screen Styles
+$: Base Hidden Object Styles
+$: Misc. Debugging Styles
+$: Hitbox Styles
+\*------------------------------------*/
+
+/*------------------------------------*\
+> $: Base Styles
+\*------------------------------------*/
+html {
+	user-select: none;
+	cursor: default;
+	background-color: #222;
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0;
+}
+
+button:focus {
+	outline: none;
+	border: none;
+}
+
+/*------------------------------------*\
+> $: General/Misc. Styles
+\*------------------------------------*/
+.wrapper {
+	position: relative;
+	overflow: hidden;
+	width: 1024px;
+	margin: 50px auto;
+	box-shadow: 3px 3px 20px rgba(0, 0, 0, .60);
+}
+
+.bg {
+	position: relative;
+	background: url("../img/hidden-item-bg.jpg") no-repeat;
+	height: 768px;
+	width: 1024px;
+}
+
+.object-wrap {
+	position: relative;
+	width: 100%;
+	height: 673px;
+}
+
+.bg.standby {
+	filter: blur(2px) sepia(100%);
+}
+
+.bg.game-over {
+	filter: blur(2px) grayscale(100%);
+}
+
+.item-list-wrap {
+	position: absolute;
+	bottom: 0;
+	height: 95px;
+	width: 1024px;
+	padding: 8px;
+	box-sizing: border-box;
+}
+
+.item-list {
+	width: 820px;
+	padding: 5px;
+	margin-left: 66px;
+}
+
+.item-col {
+	margin: 0;
+	height: 72px;
+	padding: 0;
+	column-count: 7;
+	-webkit-column-fill: auto;
+	column-gap: 10px;
+}
+
+.item-col.easy {
+	column-count: 3;
+}
+
+.item-col.medium {
+	column-count: 5;
+}
+
+.item-col.hard {
+	column-count: 7;
+}
+
+.item-col li {
+	color: #fff;
+	list-style-type: none;
+	font-size: .85em;
+}
+
+.item-col li.found {
+	text-decoration: line-through;
+	color: #ccc;
+}
+
+/*------------------------------------*\
+> $: Difficulty Select Menu Styles
+\*------------------------------------*/
+.difficulty-wrap {
+	position: absolute;
+	top: calc(50% - 250px);
+	left: calc(50% - 350px);
+	z-index: 1;
+	width: 700px;
+	height: 500px;
+	background-color: rgba(0, 0, 0, .60);
+	border: 1px solid #fff;
+	box-shadow: 5px 6px 6px rgba(0, 0, 0, .60);
+}
+
+.difficulty-wrap h2 {
+	border-bottom: 1px solid #fff;
+	padding: 20px 0;
+	margin: 0;
+	font-size: 2.3em;
+	color: #fff;
+	text-align: center;
+}
+
+.difficulty-wrap ul {
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+.difficulty-wrap li {
+	width: 300px;
+	margin: 30px auto;
+	padding: 15px;
+	border-radius: 40px;
+	color: white;
+	list-style-type: none;
+	text-align: center;
+	font-size: 3em;
+	background-color: #233740;
+}
+
+.difficulty-wrap li:hover {
+	background-color: #426470;
+}
+
+.mute {
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	border: 1px solid #fff;
+	padding: 5px 10px;
+	color: #fff;
+}
+
+/*------------------------------------*\
+> $: Title Screen Styles
+\*------------------------------------*/
+.title-screen {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 4;
+	background: #000 url("../img/title-card.jpg") no-repeat;
+	width: 1024px;
+	height: 768px;
+}
+
+.title-screen:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left;
+	width: 1024px;
+	height: 768px;
+	background: #000;
+	animation-name: title-fade-anim;
+	animation-duration: 3s;
+	animation-fill-mode: forwards
+}
+
+@keyframes title-fade-anim {
+	0% {opacity: 1;}
+	100% {opacity: 0;}
+}
+
+.start-text {
+	position: absolute;
+	bottom: 250px;
+	left: 35%;
+	font-family: sans-serif;
+	color: #fff;
+	font-size: 1.8em;
+	text-transform: uppercase;
+	text-shadow: 2px 2px 2px rgba(0, 0, 0, .70);
+	animation-name: start-text-anim;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+}
+
+@keyframes start-text-anim {
+	0% {opacity: 0;}
+	50% {opacity: 1;}
+	100% {opacity: 0;}
+}
+
+/*------------------------------------*\
+> $: Life Meter Styles
+\*------------------------------------*/
+.life-meter {
+	position: absolute;
+	z-index: 3;
+	top: 85px;
+	display: none;
+	padding: 5px 10px 5px 5px;
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
+	background-color: rgba(0, 0, 0, .30);
+}
+
+.life-meter.visible {
+	display: block;
+}
+
+.life-meter .heart-piece {
+	margin: 0 3px;
+	font-size: 1.5em;
+	color: red;
+	text-shadow: 2px 2px 2px rgba(0, 0, 0, .30);
+}
+
+.life-meter .heart-piece.empty {
+	color: #666;
+	opacity: .50;
+}
+
+/*------------------------------------*\
+> $: GameTimer Styles
+\*------------------------------------*/
+.timer {
+	position: absolute;
+	z-index: 5;
+	top: 0;
+	right: 0;
+	display: none;
+	padding: 2px 24px;
+	border-bottom-left-radius: 10px;
+	background-color: rgba(0, 0, 0, .40);
+	color: #fff;
+	font-size: 1.2em;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, .70); 
+}
+
+.timer.visible {
+	display: block;
+}
+
+/*------------------------------------*\
+> $: Scoring Element Styles
+\*------------------------------------*/
+.score {
+	position: absolute;
+	top: 7px;
+	left: 10px;
+	z-index: 4;
+	display: none;
+	width: 112px;
+	font-size: 1.4em;
+	text-align: right;
+	text-shadow: 2px 2px 1px rgba(0, 0, 0, .40);
+	color: #fff;
+}
+
+.score.visible {
+	display: block;
+}
+
+/*------------------------------------*\
+> $: Chain Combo Element Styles
+\*------------------------------------*/
+.combo {
+	position: absolute;
+	top: 51px;
+	left: 4px;
+	z-index: 4;
+	display: none;
+	width: 80px;
+	color: #fff;
+	font-size: 1em;
+	text-align: right;
+	text-shadow: 2px 2px 1px rgba(0, 0, 0, .40);
+}
+
+.combo .value {
+	font-size: 1.5em;
+}
+
+@keyframe combo {
+	0% {
+		
+	}
+}
+
+.combo.visible {
+	display: block;
+}
+
+/*----------------------------------------*\
+> $: Pop Item Styles
+\-----------------------------------------*/
+.pop-item {
+	z-index: 15;
+	position: absolute;
+	transition: all 1.2s;
+	animation-name: pop-item-anim;
+	animation-duration: 1.2s;
+}
+
+@keyframes pop-item-anim {
+	0% {opacity: 1; }
+	100% {opacity: 0; transform: translateY(-25px);}
+}
+
+.col {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.pop-item span {
+	display: block;
+	padding: 0;
+	margin: 0;
+	line-height: .95em;
+	font-family: sans-serif;
+	text-align: right;
+	font-size: .85em;
+	text-transform: uppercase;
+	color: rgba(255, 255, 255, .75);
+}
+
+.pop-item .chain-type {
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+.pop-item .chain-val {
+	font-size: 2.2em;
+	line-height: .85em;
+	font-weight: bold;
+}
+
+/*------------------------------------*\
+> $: Game Over Screen Styles
+\*------------------------------------*/
+.game-over-wrap {
+	position: absolute;
+	z-index: 4;
+	top: 0;
+	left: 0;
+	display: none;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, .50);
+}
+
+.game-over-wrap h2 {
+	width: 100%;
+	margin: 0 0 10px 0;
+	border-bottom: 1px solid #fff; 
+	text-align: center;
+	color: #fff;
+	font-size: 3.5em;
+}
+
+.game-over-wrap .content {
+	position: absolute;
+	top: 20%;
+	left: calc(50% - 200px);
+	width: 400px;
+}
+
+.score-stats-wrap table {
+	width: 100%;
+}
+
+.score-stats-wrap table td {
+	width: 50%;
+	color: #fff;
+	font-size: 1.8em;
+}
+
+.score-stats-wrap table td.score-val {
+	text-align: right;
+}
+
+.game-over-wrap .retry {
+	position: absolute;
+	bottom: 120px;
+	left: 35%;
+	width: 300px;
+	margin: 30px auto;
+	padding: 15px;
+	border: none;
+	border-radius: 40px;
+	color: white;
+	list-style-type: none;
+	text-align: center;
+	font-size: 3em;
+	background-color: #233740;
+	font-family: inherit;
+}
+
+.game-over-wrap .retry:hover {
+	background-color: #426470;
+}
+
+
+/*------------------------------------*\
+> $: Base Hidden Object Styles
+\*------------------------------------*/
+.item {
+	position: absolute;
+}
+
+.item.highlight {
+	position: relative;
+}
+
+.item.highlight:after {
+	position: absolute;
+	content: "";
+	top: calc(50% - 5px);
+	left: calc(50% - 5px);
+	height: 10px;
+	width: 10px;
+	border-radius: 30px;
+	background-color: #fff;
+	box-shadow: 2px 2px 20px rgba(255, 255, 255, 1);
+	animation-name: item-highlight-anim;
+	animation-duration: .5s;
+	animation-iteration-count: infinite;
+}
+
+@keyframes item-highlight-anim {
+	0% {
+	top: calc(50% - 0px);
+	left: calc(50% - 0px);
+	height: 0px;
+	width: 0px;
+	opacity: 0;
+	}
+	
+	50% {
+	top: calc(50% - 5px);
+	left: calc(50% - 5px);
+	height: 10px;
+	width: 10px;
+	opacity: 1;
+	}
+	
+	100% {
+	top: calc(50% - 0px);
+	left: calc(50% - 0px);
+	height: 0px;
+	width: 0px;
+	opacity: 0;
+	}
+	
+}
+
+
+
+/*------------------------------------*\
+> $: Misc. Debugging Styles
+\*------------------------------------*/
+.object-wrap.full-debug .item,
+.item.debug {
+	border: 1px solid red;
+}
+
+.object-wrap.full-debug .item:hover,
+.item.debug:hover {
+	background-color: rgba(255, 0, 0, .40);
+}
+
+/*------------------------------------*\
+> $: Hitbox Styles
+\*------------------------------------*/
+.frog {
+	top: 45px;
+	left: 120px;
+	height: 40px;
+	width: 110px;
+	transform: rotate(-35deg);
+}
+
+.rose {
+	top: 5px;
+	left: 300px;
+	height: 30px;
+	width: 35px;
+	transform: rotate(0deg);
+}
+
+.ankh {
+	top: 45px;
+	left: 400px;
+	height: 35px;
+	width: 20px;
+	transform: rotate(0deg);
+}
+
+.key-ring {
+	top: 90px;
+	left: 375px;
+	height: 55px;
+	width: 78px;
+	transform: rotate(0deg);
+}
+
+.pocket-watch {
+	top: 180px;
+	left: 460px;
+	height: 30px;
+	width: 32px;
+	transform: rotate(0deg);
+}
+
+.cigarettes {
+	top: 212px;
+	left: 300px;
+	height: 53px;
+	width: 105px;
+	transform: rotate(30deg);
+}
+
+.flor-de-liz {
+	top: 196px;
+	left: 144px;
+	height: 25px;
+	width: 22px;
+	transform: rotate(-10deg);
+}
+
+.dog {
+	top: 210px;
+	left: 53px;
+	height: 50px;
+	width: 72px;
+	transform: rotate(-15deg);
+}
+
+.ruler {
+	top: 140px;
+	left: 4px;
+	height: 18px;
+	width: 170px;
+	transform: rotate(-5deg);
+}
+
+.whistle {
+	top: 436px;
+	left: 15px;
+	height: 58px;
+	width: 35px;
+	transform: rotate(35deg);
+}
+
+.fish {
+	top: 405px;
+	left: 122px;
+	height: 90px;
+	width: 40px;
+	transform: rotate(-10deg);
+}
+
+.electric-razor {
+	top: 370px;
+	left: 201px;
+	height: 90px;
+	width: 35px;
+	transform: rotate(8deg);
+}
+
+.key {
+	top: 435px;
+	left: 254px;
+	height: 90px;
+	width: 10px;
+	transform: rotate(-24deg);
+}
+
+.syringe {
+	top: 332px;
+	left: 276px;
+	height: 120px;
+	width: 18px;
+	transform: rotate(-18deg);
+}
+
+.glasses {
+	top: 455px;
+	left: 330px;
+	height: 80px;
+	width: 20px;
+	transform: rotate(-68deg);
+}
+
+.revolver {
+	top: 380px;
+	left: 400px;
+	height: 25px;
+	width: 86px;
+	transform: rotate(-24deg);
+}
+
+.brush {
+	top: 510px;
+	left: 390px;
+	height: 34px;
+	width: 86px;
+	transform: rotate(28deg);
+}
+
+.dice {
+	top: 535px;
+	left: 510px;
+	height: 26px;
+	width: 34px;
+	transform: rotate(28deg);
+}
+
+.padlock {
+	top: 615px;
+	left: 435px;
+	height: 48px;
+	width: 48px;
+	transform: rotate(28deg);
+}
+
+.kettlebell {
+	top: 560px;
+	left: 310px;
+	height: 80px;
+	width: 80px;
+	transform: rotate(0deg);
+}
+
+.handcuffs {
+	top: 540px;
+	left: 155px;
+	height: 55px;
+	width: 85px;
+	transform: rotate(0deg);
+}
+
+.beer-mug {
+	top: 615px;
+	left: 145px;
+	height: 40px;
+	width: 80px;
+	transform: rotate(30deg);
+}
+
+.coffee-cup {
+	top: 600px;
+	left: 0px;
+	height: 70px;
+	width: 100px;
+	transform: rotate(0deg);
+}
+
+.bone {
+	top: 350px;
+	left: 65px;
+	height: 170px;
+	width: 25px;
+	transform: rotate(-10deg);
+}
+
+.horse {
+	top: 130px;
+	left: 190px;
+	height: 70px;
+	width: 150px;
+	transform: rotate(-30deg);
+}
+
+.magnet {
+	top: 610px;
+	left: 515px;
+	height: 60px;
+	width: 40px;
+	transform: rotate(40deg);
+}
+
+.wristwatch {
+	top: 585px;
+	left: 566px;
+	height: 45px;
+	width: 48px;
+	transform: rotate(-23deg);
+}
+
+.matchbox {
+	top: 550px;
+	left: 550px;
+	height: 35px;
+	width: 68px;
+	transform: rotate(-20deg);
+}
+
+.playing-card {
+	top: 580px;
+	left: 635px;
+	height: 60px;
+	width: 40px;
+	transform: rotate(-55deg);
+}
+
+.ladies-glove {
+	top: 540px;
+	left: 675px;
+	height: 40px;
+	width: 80px;
+	transform: rotate(-20deg);
+}
+
+.gear {
+	top: 600px;
+	left: 785px;
+	height: 70px;
+	width: 45px;
+	transform: rotate(-40deg);
+}
+
+.journal {
+	top: 595px;
+	left: 890px;
+	height: 60px;
+	width: 100px;
+	transform: rotate(-35deg);
+}
+
+.money {
+	top: 565px;
+	left: 860px;
+	height: 40px;
+	width: 45px;
+	transform: rotate(0deg);
+}
+
+.walkie-talkie {
+	top: 450px;
+	left: 920px;
+	height: 120px;
+	width: 45px;
+	transform: rotate(20deg);
+}
+
+.tobacco-pipe {
+	top: 475px;
+	left: 845px;
+	height: 80px;
+	width: 40px;
+	transform: rotate(20deg);
+}
+
+.headlamp {
+	top: 420px;
+	left: 845px;
+	height: 50px;
+	width: 75px;
+	transform: rotate(0deg);
+}
+
+.bottle {
+	top: 345px;
+	left: 895px;
+	height: 70px;
+	width: 40px;
+	transform: rotate(20deg);
+}
+
+.boots {
+	top: 365px;
+	left: 535px;
+	height: 150px;
+	width: 80px;
+	transform: rotate(10deg);
+}
+
+.domino {
+	top: 335px;
+	left: 560px;
+	height: 25px;
+	width: 48px;
+	transform: rotate(15deg);
+}
+
+.spring {
+	top: 470px;
+	left: 660px;
+	height: 35px;
+	width: 115px;
+	transform: rotate(25deg);
+}
+
+.doily {
+	top: 430px;
+	left: 730px;
+	height: 50px;
+	width: 55px;
+	transform: rotate(20deg);
+}
+
+.fan {
+	top: 390px;
+	left: 730px;
+	height: 40px;
+	width: 90px;
+	transform: rotate(20deg);
+}
+
+.clover {
+	top: 288px;
+	left: 846px;
+	height: 40px;
+	width: 42px;
+	transform: rotate(15deg);
+}
+
+.horseshoe {
+	top: 280px;
+	left: 682px;
+	height: 80px;
+	width: 70px;
+	transform: rotate(-20deg);
+}
+
+.pencil {
+	top: 235px;
+	left: 665px;
+	height: 10px;
+	width: 85px;
+	transform: rotate(5deg);
+}
+
+.butterfly {
+	top: 143px;
+	left: 785px;
+	height: 35px;
+	width: 50px;
+	transform: rotate(5deg);
+}
+
+.skull {
+	top: 132px;
+	left: 675px;
+	height: 42px;
+	width: 25px;
+	transform: rotate(5deg);
+}
+
+.adhesive-tape {
+	top: 80px;
+	left: 630px;
+	height: 50px;
+	width: 30px;
+	transform: rotate(-15deg);
+}
+
+.notepaper {
+	top: 40px;
+	left: 760px;
+	height: 95px;
+	width: 35px;
+	transform: rotate(8deg);
+}
+
+.cockroach {
+	top: 25px;
+	left: 925px;
+	height: 30px;
+	width: 60px;
+	transform: rotate(8deg);
+}
+
+.harmonica {
+	top: 160px;
+	left: 908px;
+	height: 110px;
+	width: 30px;
+	transform: rotate(25deg);
+}
+
+.heart {
+	top: 110px;
+	left: 965px;
+	height: 50px;
+	width: 55px;
+	transform: rotate(-3deg);
+}
+
+.hair-pick {
+	top: 170px;
+	left: 968px;
+	height: 80px;
+	width: 45px;
+	transform: rotate(-5deg);
+}
+
+.angel {
+	top: 285px;
+	left: 70px;
+	height: 45px;
+	width: 50px;
+	transform: rotate(-5deg);
+}
+
+.flower {
+	top: 485px;
+	left: 970px;
+	height: 45px;
+	width: 50px;
+	transform: rotate(25deg);
+}
