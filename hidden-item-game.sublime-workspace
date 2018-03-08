@@ -1,0 +1,332 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"get",
+				"getSensoredWords"
+			],
+			[
+				"cen",
+				"censor"
+			],
+			[
+				"box",
+				"box-shadow"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 375.0,
+		"last_filter": "pac\t\t",
+		"selected_items":
+		[
+			[
+				"pac\t\t",
+				"Package Control: Install Package"
+			],
+			[
+				"pckin",
+				"Package Control: Install Package"
+			],
+			[
+				"npm",
+				"npm: Install Package"
+			],
+			[
+				"np",
+				"npm: Install Package"
+			],
+			[
+				"pkgcin",
+				"Package Control: Install Package"
+			],
+			[
+				"npm i",
+				"npm: Install Package"
+			],
+			[
+				"gulp",
+				"Gulp: List plugins"
+			],
+			[
+				"package control ",
+				"Package Control: Install Package"
+			],
+			[
+				"package control in",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: List Packages"
+			],
+			[
+				"package ",
+				"Package Control: Install Package"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"pcac",
+				"Package Control: Install Package"
+			],
+			[
+				"pkgci",
+				"Package Control: Install Package"
+			],
+			[
+				"br",
+				"Preferences: Browse Packages"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"bro",
+				"Preferences: Browse Packages"
+			],
+			[
+				"pro",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 442.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Projects/Hidden-Item-Game"
+	],
+	"file_history":
+	[
+		"/C/Projects/TypeScriptSamples/simple/animals.ts",
+		"/C/Users/Jorge/Desktop/test.html",
+		"/C/Projects/readwords/readwords.js",
+		"/C/Projects/censorify/README.txt",
+		"/C/Projects/genesis-list/index.js",
+		"/C/Projects/genesis-list/app.js",
+		"/C/Projects/genesis-list/Gruntfile..js",
+		"/C/Projects/friends-test/package.json",
+		"/C/Projects/friends-test/package-lock.json",
+		"/C/Projects/friends-test/app.js",
+		"/C/Projects/the-searching/css/styles.css",
+		"/C/Projects/the-searching/js/scripts.js",
+		"/C/Projects/the-searching/index.html",
+		"/C/Projects/testing-practice/mochatest/package.json",
+		"/C/Projects/testing-practice/mochatest/app.js",
+		"/C/Projects/testing-practice/mochatest/test/appTest.js",
+		"/C/Projects/napkinschematic/index.html",
+		"/C/Projects/napkinschematic/js/scripts.js",
+		"/C/Users/Jorge/AppData/Roaming/Sublime Text 3/Packages/JSLint/JSLint.sublime-settings",
+		"/C/Projects/test/examplehtmlfile.html",
+		"/C/Projects/test/demo_http.js",
+		"/C/Projects/test/myFirstModule.js",
+		"/C/Projects/napkinschematic/css/styles.css",
+		"/C/Users/Jorge/Desktop/example.json",
+		"/C/Projects/napkinschematic/sftp-config.json",
+		"/C/Users/Jorge/AppData/Roaming/Sublime Text 3/Packages/User/npm.sublime-settings",
+		"/C/Users/Jorge/AppData/Roaming/Sublime Text 3/Packages/npm/npm.sublime-settings",
+		"/C/Users/Jorge/Desktop/personal site/index.html",
+		"/C/Users/Jorge/Desktop/personal site/js/scripts.js",
+		"/C/Users/Jorge/Desktop/personal site/css/styles.css",
+		"/C/Users/Jorge/Desktop/personal site/styles.css",
+		"/C/Users/Jorge/Desktop/personal site/scripts.js",
+		"/C/Projects/test/test.js",
+		"/C/Projects/test/app.js",
+		"/C/Users/Jorge/Desktop/That Node Though/module1.js",
+		"/C/Users/Jorge/Desktop/That Node Though/hello",
+		"/C/Users/Jorge/Desktop/That Node Though/module2.js",
+		"/C/Users/Jorge/AppData/Roaming/Sublime Text 3/Packages/User/node.sublime-build",
+		"/C/Users/Jorge/Documents/dignitybailbonds/public_html/index.html",
+		"/C/Users/Jorge/Documents/dignitybailbonds/public_html/css/styles.css",
+		"/C/Users/Jorge/Documents/dignitybailbonds/public_html/courts.html",
+		"/C/Users/Jorge/Desktop/Sublime-Testing/index.html",
+		"/C/Users/Jorge/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings"
+	],
+	"find":
+	{
+		"height": 27.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 37.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.doc":
+	{
+		"height": 0.0
+	},
+	"output.exec":
+	{
+		"height": 276.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.gulp_output":
+	{
+		"height": 256.0
+	},
+	"output.sftp":
+	{
+		"height": 126.0
+	},
+	"output.textarea":
+	{
+		"height": 126.0
+	},
+	"pinned_build_system": "Packages/User/node.sublime-build",
+	"project": "hidden-item-game.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": false,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"cou",
+				"public_html\\courts.html"
+			],
+			[
+				"sty",
+				"public_html\\css\\styles.css"
+			],
+			[
+				"ind",
+				"public_html\\index.html"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 241.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
